@@ -13,13 +13,13 @@
             </section>
 
             <section>
-                <p> Are you sure you want to delete your account </p>
+                <p>是否确实要删除您的帐户？ </p>
 
                 <form method="POST" action="{{ route('account.delete.now') }}">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-check"></i> Yes</button>
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-check"></i> 是</button>
 
-                    <a href="{{ route('account.dont.delete') }}" class="btn btn-primary"><i class="fa fa-close"></i> No</a>
+                    <a href="{{ route('account.dont.delete') }}" class="btn btn-primary"><i class="fa fa-close"></i> 否</a>
                 </form>
 
             </section>

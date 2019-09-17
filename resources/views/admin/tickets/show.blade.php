@@ -60,13 +60,13 @@
                 <div class="col-md-7">
                     <div class="box box-default">
                         <div class="box-header with-border">
-                            <h3 class="box-title"><i class="fa fa-comments"> Comments</i></h3>
+                            <h3 class="box-title"><i class="fa fa-comments"> 评论</i></h3>
                         </div>
 
                         <div class="box-body chat" id="chat-box">
 
                             @if ($comments->isEmpty())
-                                <p>There is no comments yet</p>
+                                <p>目前还没有评论 </p>
                             @else
 
                                 @foreach ($comments as $comment)
@@ -118,7 +118,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn bg-purple">Publish comment</button>
+                                        <button type="submit" class="btn bg-purple">发布评论 </button>
                                     </div>
                                 </form>
                         </div>
