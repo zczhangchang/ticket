@@ -17,13 +17,13 @@
         });
 
         $(".delete").on("submit", function(){
-            return confirm("Do you want to delete this item?");
+            return confirm("是否要删除此项目？");
         }); 
         
         $(".deleteuser").on("submit", function(){
-            return confirm("WARNING: If you delete this user, all tickets and related comments to this user will be deleted. Are you sure?");
+            return confirm("警告：如果删除此用户，则将删除此用户的所有信息。你确定吗？ ");
         });         
 
         $(".deletetickets").on("submit", function(){
-            return confirm("WARNING: If you delete this tickets, all comments to this ticket will be deleted. Are you sure?");
+            return confirm("警告：如果删除此信息，则将删除与之相关的所有信息。你确定吗？ ");
         });         

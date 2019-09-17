@@ -15,7 +15,7 @@ class UserController extends Controller
     //显示用户的页面
     public function index()
     {
-        $data = User::orderBy('id', 'DESC')->paginate(10);
+        $data = User::orderBy('id', 'DESC')->paginate(15);
 
         return view('admin.users.index', compact('data'))->with('i');
     }

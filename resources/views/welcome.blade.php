@@ -5,13 +5,15 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container">
-
+{{--            {{ site_name() }}--}}
             <section class="content">
-                <header class="jumbotron hero-spacer">
-                    <h1>Welcome to {{ site_name() }}!</h1>
-                    <p>{{ site_name() }} is a Open Source Support Ticket system. It is built with the awesome Laravel
-                        Framwork. It includes roles & permissions, ticket system, responsive email
-                        templates and much more.</p>
+                < class="jumbotron hero-spacer">
+                    <h1>维保派单系统</h1>
+                    <p>注意事项：</p>
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
 
                     @if (Auth::guest())
                         <p><a href="/register" class="btn bg-purple">创建用户</a></p>
