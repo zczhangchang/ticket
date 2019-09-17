@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{{ load_asset('dist/css/AdminLTE.min.css') }}">
+    <link rel="stylesheet" href="{{ load_asset('dist/css/index.css') }}">
     <link rel="stylesheet" href="{{ load_asset('dist/css/skins/skin-purple.min.css') }}">
     <link rel="stylesheet" href="{{ load_asset('summernote/summernote.css') }}">
 
@@ -18,6 +19,9 @@
         .content {
             padding-left: 0;
             padding-right: 0;
+        }
+        ul li{
+            list-style: none;
         }
     </style>
 

@@ -15,70 +15,37 @@
                         @if ($tickets->isEmpty())
                             <p>暂无.</p>
                         @else
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>标题</th>
-                                    <th>回复</th>
-                                    <th>类别</th>
-                                    <th>状态</th>
-                                    <th>处理等级</th>
-                                    <th>创建时间</th>
-                                    <th>更新时间</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach ($tickets as $ticket)
-                                    <tr>
-                                        <td><span class="label label-default">#{{ $ticket->ticket_id }}</span></td>
-                                        <td>
-                                            <a href="{{ url('tickets/'. $ticket->ticket_id) }}">
-                                                {{ $ticket->title }}
-                                            </a>
-                                        </td>
-                                        <td><span class="badge">{{ count($ticket->comments) }}</span></td>
-                                        <td>
-                                            @foreach ($categories as $category)
-                                                @if ($category->id == $ticket->category_id)
-                                                    {{ $category->name }}
-                                                @endif
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            @foreach ($statuses as $status)
-                                                @if ($status->id == $ticket->status_id)
-                                                    @if ($status->id == 1)
-                                                        <span class="label label-info"> {{ $status->name }}</span>
-                                                    @elseif ($status->id == 2)
-                                                        <span class="label label-warning"> {{ $status->name }}</span>
-                                                    @elseif ($status->id == 3)
-                                                        <span class="label label-success"> {{ $status->name }}</span>
-                                                    @else
-                                                        <span class="label label-danger"> {{ $status->name }}</span>
-                                                    @endif
-                                                @endif
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            @foreach ($prioritys as $priority)
-                                                @if ($priority->id == $ticket->priority_id)
-                                                    @if ($priority->id == 1)
-                                                        <p class="bg-danger"> {{ $priority->name }}</p>
-                                                    @elseif ($priority->id == 2)
-                                                        <p class="bg-success"> {{ $priority->name }}</p>
-                                                    @else
-                                                        <p class="bg-info"> {{ $priority->name }}</p>
-                                                    @endif
-                                                @endif
-                                            @endforeach
-                                        </td>
-                                        <td>{{ $ticket->created_at->diffForHumans() }}</td>
-                                        <td>{{ $ticket->updated_at->diffForHumans() }}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                            <div class="box-body">
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('') }}">
+                                {!! csrf_field() !!}
+                                    @foreach ($tickets as $ticket)
+                                    <!-- ID -->
+                                    <div class="list-wrap">
+                                        <span class="label label-default">#{{ $ticket->ticket_id }}</span>
+                                        <ul class="app-list">
+                                            <li>
+                                                <div class="app-wrap">
+                                                    <a href="">
+                                                    <div class="form-group">
+                                                        <label class="col-xs-4 col-md-2 control-label" >维修地点：</label>
+                                                        <label  class="col-xs-8 col-md-10 control-label" style="text-align: center">ffffffff</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-xs-4 col-md-2 control-label" >维修人：</label>
+                                                        <label  class="col-xs-8 col-md-10 control-label" style="text-align: center">ffffffff</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-xs-4 col-md-2 control-label" >进度：</label>
+                                                        <label  class="col-xs-8 col-md-10 control-label" style="text-align: center">ffffffff</label>
+                                                    </div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    @endforeach
+                                </form>
+                            </div>
                         @endif
                     </div>
                 </div>

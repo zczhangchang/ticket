@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+<!-- 个人信息 -->
 @section('title', 'My profile')
 
 @section('content')
@@ -32,24 +32,29 @@
 
                                 <ul class="list-group list-group-unbordered">
                                     <li class="list-group-item">
-                                        <b>位置</b> <a class="pull-right">{{ $account->location }}</a>
+                                        <b>地址</b> <a class="pull-right">{{ $account->location }}</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>网站</b> <a class="pull-right"
+                                        <b>联系方式</b> <a class="pull-right"
                                                      href="{{ $account->website }}">{{ $account->website }}</a>
                                     </li>
                                 </ul>
+
+                                <a href="{{ route('account.confirm.delete') }}">
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> 删除账户
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-xs-12">
                         <div class="nav-tabs-custom">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#profile" data-toggle="tab">个人信息</a></li>
                                 <li><a href="#avatar" data-toggle="tab">更改头像</a></li>
                                 <li><a href="#password" data-toggle="tab">更改密码</a></li>
-                                <li><a href="#deleteaccount" data-toggle="tab">删除账号</a></li>
+{{--                                <li><a href="#deleteaccount" data-toggle="tab">删除账号</a></li>--}}
                             </ul>
                             <div class="tab-content">
                                 <div class="active tab-pane" id="profile">
@@ -104,7 +109,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="location" class="col-sm-2 control-label">位置</label>
+                                            <label for="location" class="col-sm-2 control-label">地址</label>
                                             <div class="col-sm-4">
                                                 <input type="text" name="location" id="location"
                                                        value="{{ $account->location ?: old('location') }}"
@@ -112,10 +117,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="website" class="col-sm-2 control-label">网站</label>
+                                            <label for="phone" class="col-sm-2 control-label">联系方式</label>
                                             <div class="col-sm-4">
-                                                <input type="text" name="website" id="website"
-                                                       value="{{ $account->website ?: old('website') }}"
+                                                <input type="text" name="phone" id="phone"
+                                                       value="{{ $account->phone ?: old('phone') }}"
                                                        class="form-control" placeholder="http://example.com">
                                             </div>
                                         </div>
@@ -198,16 +203,16 @@
 
                                 </div>
 
-                                <div class="tab-pane" id="deleteaccount">
+{{--                                <div class="tab-pane" id="deleteaccount">--}}
 
-                                    <p> You can delete your account, but keep in mind this action is irreversible. </p>
+{{--                                    <p> You can delete your account, but keep in mind this action is irreversible. </p>--}}
 
-                                    <a href="{{ route('account.confirm.delete') }}">
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> 删除账户
-                                        </button>
-                                    </a>
+{{--                                    <a href="{{ route('account.confirm.delete') }}">--}}
+{{--                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> 删除账户--}}
+{{--                                        </button>--}}
+{{--                                    </a>--}}
 
-                                </div>
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>

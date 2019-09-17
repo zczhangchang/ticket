@@ -17,9 +17,9 @@
 
                         {!! csrf_field() !!}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-sm-2 control-label">姓名</label>
+                            <label for="name" class="col-sm-2 control-label">姓名：</label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" id="name" autofocus="" placeholder="Type in a your name"
+                                <input type="text" name="name" id="name" autofocus="" placeholder="请输入姓名"
                                        class="form-control">
                                 @if ($errors->has('name'))
                                     <span class="help-block">{{ $errors->first('name') }}</span>
@@ -28,9 +28,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-sm-2 control-label">邮箱</label>
+                            <label for="email" class="col-sm-2 control-label">邮箱：</label>
                             <div class="col-sm-10">
-                                <input type="text" name="email" id="email" placeholder="Type in your email address"
+                                <input type="text" name="email" id="email" placeholder="请输入您的电子邮箱"
                                        class="form-control">
                                 @if ($errors->has('email'))
                                     <span class="help-block">{{ $errors->first('email') }}</span>
